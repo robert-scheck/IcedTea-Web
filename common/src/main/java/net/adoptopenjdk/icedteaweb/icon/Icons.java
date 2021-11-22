@@ -46,7 +46,13 @@ class Icons {
 
     private final IcoHeader header;
     private final int countOfIcons;
-    private final List<BufferedImage> images; //size 16*countOfIcons bytes
+    private  final List<BufferedImage> images; //size 16*countOfIcons bytes
+
+    Icons(final List<BufferedImage> imgs) {
+        this.images = imgs;
+        header = null;
+        countOfIcons = imgs.size();
+    }
 
     Icons(final ImageInputStream src) throws IOException, IcoException {
         this.header = new IcoHeader(src);
